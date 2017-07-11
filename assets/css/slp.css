@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'slp';
+  src: url('../font/slp.eot?63075881');
+  src: url('../font/slp.eot?63075881#iefix') format('embedded-opentype'),
+       url('../font/slp.woff2?63075881') format('woff2'),
+       url('../font/slp.woff?63075881') format('woff'),
+       url('../font/slp.ttf?63075881') format('truetype'),
+       url('../font/slp.svg?63075881#slp') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'slp';
+    src: url('../font/slp.svg?63075881#slp') format('svg');
+  }
+}
+*/
+ 
+ [class^="slp-"]:before, [class*=" slp-"]:before {
+  font-family: "slp";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.slp-chat:before { content: '\e801'; } /* '' */
+.slp-panel-down:before { content: '\e803'; } /* '' */
+.slp-panel-top:before { content: '\e804'; } /* '' */
+.slp-profile:before { content: '\e807'; } /* '' */
+.slp-panel-right:before { content: '\e808'; } /* '' */
+.slp-panel-left:before { content: '\e809'; } /* '' */
+.slp-close:before { content: '\e80a'; } /* '' */
+.slp-binnacle:before { content: '\e80b'; } /* '' */
+.slp-stop:before { content: '\e80c'; } /* '' */
+.slp-incident:before { content: '\e80d'; } /* '' */
+.slp-instructions:before { content: '\e80e'; } /* '' */
+.slp-logo:before { content: '\e80f'; } /* '' */
+.slp-point:before { content: '\e810'; } /* '' */
+.slp-arc:before { content: '\e811'; } /* '' */
+.slp-delay:before { content: '\e812'; } /* '' */
+

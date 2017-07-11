@@ -1,0 +1,53 @@
+<div class="map">  
+  <section id="map" style="flex:1">
+    <ui-gmap-google-map control="mapObject" styles="generalMapOptions.styles" center="generalMapOptions.center" zoom="generalMapOptions.zoom">
+      <ui-gmap-marker ng-repeat="marker in markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"
+        click="ClickMarker">
+      </ui-gmap-marker>
+    </ui-gmap-google-map>
+  </section>
+  <!--<div class="map-status-icons">
+  <div class="advanced-search" ng-class="{'selected': showAdvancedSearch}">
+    <div>
+      <h3 style="padding-left: 5px;">
+        Búsqueda avanzada
+      </h3>
+    </div>
+    <div style="display: flex;">
+      <div style="flex: 1;">
+        <selector search-label="Grupo" options="selectorOptions" get-items="GroupSelectorGetMethod" selected="selectedGroup" placeholder="Juan Perez"></selector>
+      </div>
+      <div style="flex: 1;">
+        <selector search-label="Operacion" placeholder="Operacion 1"></selector>
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="flex: 1;">
+        <selector search-label="Ruta" options="selectorOptions" get-items="RouteSelectorGetMethod" selected="selectedRoute" placeholder="TXR756"></selector>
+      </div>
+      <div style="flex: 1;">
+        <selector search-label="Transportista" get-items="CarrierSelectorGetMethod" selected="selectedCarrier" placeholder="Wallmart transp"></selector>
+      </div>
+    </div>
+  </div>
+  <div class="status-icon" ng-repeat="type in types" ng-click="type.click()" ng-class="{'selected' : type.selected}">
+    <div>
+      <status-icon type="type.id"></status-icon>
+    </div>
+    <div class="stop-counter">
+      {{ type.quantity }}
+    </div>
+    <div class="icon-description">
+      {{ type.description }}
+    </div>
+  </div>
+  <div class="status-icon" ng-class="{'selected': isAdvancedFilterApplied}" ng-click="showAdvancedSearch = !showAdvancedSearch">
+    <div>
+      <status-icon type="6"></status-icon>
+    </div>
+    <div class="icon-description">
+      Búsqueda avanzada
+    </div>
+  </div>
+</div>-->
+</div>

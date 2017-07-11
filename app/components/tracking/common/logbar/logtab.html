@@ -1,0 +1,4 @@
+<div class="panel-body">
+    <log-message ng-repeat="logMessage in ctrl.logMessages | orderBy:sortLog:true" date=logMessage.Date title={{logMessage.Title}} body={{logMessage.Body}} class="timeline-item">
+    </log-message>
+</div>

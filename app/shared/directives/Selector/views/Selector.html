@@ -1,0 +1,21 @@
+<div class="selector-container">
+    <div class="selector" tooltip="No hubo resultados" flow="down" ng-class="{'no-result' : emptyResponse}">
+        <div class="icon" ng-class="{'selected': isSelected}">
+            <i class="fa fa-spinner" ng-class="{'fa-spin' : isSearching}" ng-show="isSearching"></i>
+            <i class="fa fa-search" ng-show="(!isSearching && !isSelected && !options.isMultiSelect) || (!isSearching && options.isMultiSelect)" ng-click="Select.Search()"></i>
+            <i class="fa fa-times" ng-click="Select.RemoveSelection()" ng-show="!isSearching && isSelected && !options.isMultiSelect"></i>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="{{placeholder}}" ng-disabled="isSelected && !options.isMultiSelect" title="{{searchItem}}" ng-model="searchItem" ng-keypress="InputKeypress($event)" required >
+            <hr ng-class="{'selected': isSelected}">
+        </div>    
+    </div>
+    <div class="multiselection" ng-show="options.isMultiSelect && isSelected">
+        <ul>
+            <li ng-repeat="item in selected track by $index">
+                <div>{{ ParseItemDescription(item) }}</div>
+                <div class="remove-item" ng-click="Select.RemoveSelection()"><i class="icon-cancel"></i></div>
+            </li>
+        </ul>
+    </div>
+</div>

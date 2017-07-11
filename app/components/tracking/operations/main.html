@@ -1,0 +1,92 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<div style="width:100%;height:100%">
+  <a href="#/tracking/operationgroups">GRUPO OPERACIONES</a>
+  {{$state.current.name}}
+  <div class="full-height-scroll" full-scroll>
+    <div class="tracing-header" hl-sticky="">
+      <div class="row">
+        <div class="col-xs-1 tracing-header-piechart">
+          <div easypiechart options=ctrl.optionsSimplePieChart percent=ctrl.percentagecompleted class="chart" ><span class="percent">{{ctrl.percentagecompleted}}</span></div>
+        </div>
+        <div class="col-xs-10 tracing-header-text">
+          <h2 class="tracing-header-title">
+              <b>Centro de distribución 125</b>
+          </h2>
+          <span class="font-normal">Descripción: </span>operaciones con mercadería originada en los depósitos del centro de distribución 1.
+
+          <h5 class="tracing-header-status-info">
+            <div class="font-normal">Costo de operaciones: <span class="txt-color-green"><i class="fa fa-dollar"></i>5,000.00</div>
+            <div class="font-normal">Estado del grupo de operaciones: <statusdot state=ctrl.state></status></div>
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8 content">
+          <operacion showbody=ctrl.showbody ng-repeat="operacion in ctrl.operaciones | filter:{ operationTitle: searchName} | orderBy:ctrl.dynamicOrderFunction(sortBy, ctrl.orderByDirection)" datos=operacion titles="ctrl.indicatorTitles" timetitles="ctrl.timeIndicatorTitles"></operacion>
+      </div>
+      <div class="col-xs-4 sidebar-outer">
+        <div hl-sticky="" class="fixed">
+          <div class="full-height-scroll" full-scroll>
+            <div class="tabs-container">
+              <uib-tabset>
+                <uib-tab heading="Log">
+                  <div class="panel-body">
+                    <div class="ibox-content inspinia-timeline">
+                      <log-message ng-repeat="logMessage in ctrl.logMessages | orderBy:ctrl.sortLog:true" date=logMessage.Date title={{logMessage.Title}} body={{logMessage.Body}} class="timeline-item">
+                      </log-message>
+                    </div>
+                  </div>
+                </uib-tab>
+                <uib-tab heading="Problemas">
+                  <div class="panel-body">
+                    <strong>Donec quam felis</strong>
+                    <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among
+                        the stalks, and grow familiar with the countless indescribable forms of the insects
+                        and flies, then I feel the presence of the Almighty, who formed us in his own image, and
+                        the breath </p>
+                    <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss
+                        of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                        sense of mere tranquil existence, that I neglect my talents. I should be incapable of
+                        drawing a single stroke at the present moment; and yet.</p>
+                        <strong>Donec quam felis</strong>
+                        <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among
+                            the stalks, and grow familiar with the countless indescribable forms of the insects
+                            and flies, then I feel the presence of the Almighty, who formed us in his own image, and
+                            the breath </p>
+                        <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss
+                            of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                            sense of mere tranquil existence, that I neglect my talents. I should be incapable of
+                            drawing a single stroke at the present moment; and yet.</p>
+                            <strong>Donec quam felis</strong>
+                            <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among
+                                the stalks, and grow familiar with the countless indescribable forms of the insects
+                                and flies, then I feel the presence of the Almighty, who formed us in his own image, and
+                                the breath </p>
+                            <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss
+                                of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                                sense of mere tranquil existence, that I neglect my talents. I should be incapable of
+                                drawing a single stroke at the present moment; and yet.</p>
+                                <strong>Donec quam felis</strong>
+                                <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among
+                                    the stalks, and grow familiar with the countless indescribable forms of the insects
+                                    and flies, then I feel the presence of the Almighty, who formed us in his own image, and
+                                    the breath </p>
+                                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss
+                                    of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
+                                    sense of mere tranquil existence, that I neglect my talents. I should be incapable of
+                                    drawing a single stroke at the present moment; and yet.</p>
+                  </div>
+                </uib-tab>
+              </uib-tabset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <tracing-filters></tracing-filters>
+</div>

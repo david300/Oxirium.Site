@@ -1,0 +1,16 @@
+<div class="purchase-order" ng-click="item.selected = !item.selected">
+  <div class="purchase-order-code instruction-list-item" ng-class="{'selected' : item.selected}">
+    <i class="fa" aria-hidden="true"  ng-class="item.selected ? 'fa-angle-down' : 'fa-angle-right'" ></i>
+    <span>{{item.location}}</span>
+  </div>
+  <ol ng-show="item.selected">
+    <li ng-repeat="incident in item.incidents" class="incidents">
+      <div class="incident-title">
+        <b>{{incident.date | date:'dd-MM-yyyy HH:mm:ss'}}</b>
+      </div>
+      <div>
+        {{incident.description}}
+      </div>
+    </li>
+  </ol>
+</div>

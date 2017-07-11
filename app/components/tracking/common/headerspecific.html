@@ -1,0 +1,17 @@
+<div class="tracing-header" hl-sticky="">
+  <div class="row">
+    <div class="col-xs-1 tracing-header-piechart">
+      <div easypiechart options=optionsSimplePieChart percent=ctrl.HeaderData.progress class="chart" ><span class="percent">{{ctrl.HeaderData.progress}}</span></div>
+    </div>
+    <div class="col-xs-10 tracing-header-text">
+      <h2 class="tracing-header-title">
+          <b>{{ctrl.HeaderData.title}}</b>
+      </h2>
+      <span class="font-normal">Descripción: </span>{{ctrl.HeaderData.description}}
+
+      <h5 class="tracing-header-status-info">
+        <div class="font-normal">Estado: <statusdot state=ctrl.HeaderData.state></status></div>
+      </h5>
+    </div>
+  </div>
+</div>

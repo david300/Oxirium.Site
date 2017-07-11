@@ -1,0 +1,248 @@
+<div style="flex: 1;display:flex;flex-flow: row;">
+    <div class="filters" ng-class="{'hidde' : toggleFilters}">
+        <div class="top-filter">
+            <div class="description-container">
+            <div class="filter-description">
+                FILTROS
+            </div>
+            <div class="filtered-ammount">
+                <span>
+                100
+                </span>
+                <span>
+                /1243
+                </span>
+            </div>
+            <div class="reset-filters">
+                <a href="#" class="reset-btn">RESET</a>
+            </div>
+            </div>
+            <div class="generic-criteria">
+            <input type="text" placeholder="Texto Filtro" ng-model="genericCriteria">
+            </div>
+        </div>
+        <div class="filter-criteria-group" full-scroll>
+            <div class="filter-criteria">
+            <div class="filter-title" ng-class="{'showFilter': showStatusFilter || delayed || onTime}" ng-click="showStatusFilter = !showStatusFilter">
+                <div>
+                    <i ng-class="{'icon-right-dir': !showStatusFilter, 'icon-down-dir': showStatusFilter}"></i>
+                    <span>ESTADO</span>
+                </div>
+                <div ng-show="delayed || onTime" class="filter-quantity">
+                    {{ (onTime ? 1 : 0) +  (delayed ? 1 : 0) }}
+                </div>
+            </div>
+            <div class="filter-options" ng-class="{'showFilter': showStatusFilter}">
+                <ul>
+                    <li>
+                        <span class="switch-label" ng-class="{'option-selected': delayed}">Demorado</span>
+                        <label class="switch">
+                            <input type="checkbox" ng-model="delayed">
+                            <div class="slider round"></div>
+                        </label>
+                    </li>
+                    <li>
+                        <span class="switch-label" ng-class="{'option-selected': onTime}">Puntual</span>
+                        <label class="switch">
+                            <input type="checkbox" ng-model="onTime">
+                            <div class="slider round"></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="filter-criteria">
+            <div class="filter-title" ng-class="{'showFilter': showActivityFilter || inTransit || inStop}" ng-click="showActivityFilter = !showActivityFilter">
+                <div>
+                    <i ng-class="{'icon-right-dir': !showActivityFilter, 'icon-down-dir': showActivityFilter}"></i>
+                    <span>ACTIVIDAD</span>
+                </div>
+                <div ng-show="inTransit || inStop" class="filter-quantity">
+                    {{ (inTransit ? 1 : 0) +  (inStop ? 1 : 0) }}
+                </div>
+            </div>
+            <div class="filter-options" ng-class="{'showFilter': showActivityFilter}">
+                <ul>
+                    <li>
+                        <span class="switch-label" ng-class="{'option-selected': inTransit}">En tránsito</span>
+                        <label class="switch">
+                            <input type="checkbox" ng-model="inTransit">
+                            <div class="slider round"></div>
+                        </label>
+                    </li>
+                    <li>
+                        <span class="switch-label" ng-class="{'option-selected': inStop}">En parada</span>
+                        <label class="switch">
+                            <input type="checkbox" ng-model="inStop">
+                            <div class="slider round"></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="filter-criteria">
+                <div class="filter-title" ng-class="{'showFilter': selectedGroup.length > 0 || showGroupFilter}" ng-click="showGroupFilter = !showGroupFilter">
+                    <div>
+                        <i ng-class="{'icon-right-dir': !showGroupFilter, 'icon-down-dir': showGroupFilter}"></i>
+                        <span>GRUPO</span>
+                    </div>
+                    <div ng-show="selectedGroup.length > 0" class="filter-quantity">
+                        {{ selectedGroup.length }}
+                    </div>
+                </div>
+                <div class="filter-options" ng-class="{'showFilter': showGroupFilter}">
+                    <selector options="selectorOptions" get-items="GroupSelectorGetMethod" selected="selectedGroup" placeholder="Buscar"></selector>
+                </div>  
+            </div>
+            <div class="filter-criteria">
+                <div class="filter-title" ng-class="{'showFilter': showCarrierFilter || selectedCarrier.length > 0 }" ng-click="showCarrierFilter = !showCarrierFilter">
+                    <div>
+                        <i ng-class="{'icon-right-dir': !showCarrierFilter, 'icon-down-dir': showCarrierFilter}"></i>
+                        <span>TRANSPORTISTA</span>
+                    </div>
+                    <div ng-show="selectedCarrier.length > 0" class="filter-quantity">
+                        {{ selectedCarrier.length }}
+                    </div>
+                </div>
+                <div class="filter-options" ng-class="{'showFilter': showCarrierFilter}">                    
+                    <selector options="selectorOptions" get-items="CarrierSelectorGetMethod" selected="selectedCarrier" placeholder="Buscar"></selector>
+                </div>  
+            </div>
+            <div class="filter-criteria">
+                <div class="filter-title" ng-class="{'showFilter': showRouteFilter || selectedRoute.length > 0 }" ng-click="showRouteFilter = !showRouteFilter">
+                    <div>
+                        <i ng-class="{'icon-right-dir': !showRouteFilter, 'icon-down-dir': showRouteFilter}"></i>
+                        <span>RUTA</span>
+                    </div>
+                    <div ng-show="selectedRoute.length > 0" class="filter-quantity">
+                        {{ selectedRoute.length }}
+                    </div>
+                </div>
+                <div class="filter-options" ng-class="{'showFilter': showRouteFilter}">                    
+                    <selector options="selectorOptions" get-items="RouteSelectorGetMethod" selected="selectedRoute" placeholder="Buscar"></selector>
+                </div>  
+            </div>
+        </div>
+        <div class="apply-filters">
+            <a href="#" class="apply-btn">APLICAR</a>
+        </div>
+    </div>
+    <div class="route-list">
+        <div class="toggle-filters" ng-click="toggleFilters = !toggleFilters">
+            <i class="icon-left-dir" ng-class="{'rotate' : toggleFilters}"></i>
+        </div>
+        <div class="route-list-title">
+            RUTAS
+        </div>
+        <div full-scroll>
+            <ul>
+                <li ng-repeat="item in FilteredActiveRoutes" ng-class="{'green' : item.general.type <= 2, 'red' : item.general.type > 2}" >
+                    {{item.general.routeName}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="full-height" style="flex:1;">
+        <div class="map-title">
+            <div>MONITOREO DE RUTAS</div>
+            <div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li uib-dropdown>
+                <a class="count-info" href uib-dropdown-toggle>
+                            <i class="slp-incident"></i> <!--<span class="label label-warning">16</span>-->
+                        </a>
+                <ul class="dropdown-messages" uib-dropdown-menu>
+                    <li>
+                    <div class="dropdown-messages-box">
+                        <div>
+                        <small class="pull-right">46h ago</small>
+                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <div class="dropdown-messages-box">
+                        <div>
+                        <small class="pull-right text-navy">5h ago</small>
+                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <div class="dropdown-messages-box">
+                        <div>
+                        <small class="pull-right">23h ago</small>
+                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <div class="text-center link-block">
+                        <a ui-sref="mailbox.inbox">
+                                        <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                    </a>
+                    </div>
+                    </li>
+                </ul>
+                </li>
+                <li uib-dropdown>
+                <a class="count-info" href uib-dropdown-toggle>
+                            <i class=" slp-chat"></i> <!--<span class="label label-danger">8</span>-->
+                        </a>
+                <ul class="dropdown-alerts" uib-dropdown-menu>
+                    <li>
+                    <a ui-sref="inbox">
+                        <div>
+                        <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                        <span class="pull-right text-muted small">4 minutes ago</span>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <a ui-sref="profile">
+                        <div>
+                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                        <span class="pull-right text-muted small">12 minutes ago</span>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <a ui-sref="grid_options">
+                        <div>
+                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                        <span class="pull-right text-muted small">4 minutes ago</span>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <div class="text-center link-block">
+                        <a ui-sref="miscellaneous.notify">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                    </div>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div class="full-height" style="display:flex;">
+            <div ui-view="Map" class="full-height map-container" style="flex: 1;display:flex;">
+            </div>
+            <div ui-view="SideMenu" class="route-tracking-side-menu" ng-class="{'hidde' : toggleSideMenu}">
+            </div>
+        </div>
+        
+    </div>    
+    
+</div>

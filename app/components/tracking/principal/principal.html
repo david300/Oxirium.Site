@@ -1,0 +1,384 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div ng-controller="SeguimientoCtrl as ctrl" style="width:100%;height:100%">
+  <div class="mail-box-header" style="padding-top:5px;" hl-sticky="">
+
+                  <div>
+                      <div class="row" >
+                        <div class="col-xs-1" style="min-width: 110px;text-align:center">
+                          <div style="display:inline-block;" easypiechart options=ctrl.optionsSimplePieChart percent="50" class="chart" ><span class="percent">50</span></div>
+                        </div>
+                        <div class="col-xs-10" style="margin-left:15px;">
+                          <h2 style="margin-bottom:5px;">
+                              <b>Centro de distribución 1</b>
+                          </h2>
+                          <span class="font-normal">Descripción: </span>operaciones con mercadería originada en los depósitos del centro de distribución 1.
+
+                          <h5 style="margin:5px 0 5px 0;">
+                            <div class="font-normal">Costo de operaciones: <span class="txt-color-green"><i class="fa fa-dollar"></i> &nbsp;5,000.00</div>
+                            <div class="font-normal">Estado del grupo de operaciones: <statusdot state={{ctrl.state.Title}}></status></div>
+                          </h5>
+<!--
+                            <table width="100%" border=0>
+
+                              <tr>
+                                <td>
+
+                                </td>
+                                <td colspan=2 style="text-align:center">
+
+                                    <h5 style="margin:5px 0 5px 0;">
+                                      <div class="font-normal">Costo total</div>
+                                    </h5>
+                                </td>
+                                <td colspan=2 style="text-align:center">
+                                  <h5 style="margin:5px 0 5px 0;">
+                                    <div class="font-normal">Tiempo total</div>
+                                  </h5>
+                                </td>
+                                <td colspan=2 style="text-align:center">
+                                  <h5 style="margin:5px 0 5px 0;">
+                                    <div class="font-normal">Tiempo transito</div>
+                                  </h5>
+                                </td>
+                                <td colspan=2 style="text-align:center">
+                                  <h5 style="margin:5px 0 5px 0;">
+                                    <div class="font-normal">Tiempo paradas</div>
+                                  </h5>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  Peso
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Volumen
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Distancia
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Unidades
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Bultos
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Soportes
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                                <td>
+                                    <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span>
+                                </td>
+                              </tr>
+
+                            </table>-->
+
+                        </div>
+
+
+                      </div>
+
+
+                      <!--
+                      <span class="titleIndicator">
+                				<h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+                			</span>
+
+                      <span class="titleIndicator">
+                				<h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+                			</span>
+                      <span class="titleIndicator">
+                				<h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+                			</span>
+
+                      <span class="titleIndicator">
+                				<h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+                			</span>
+                      <span class="titleIndicator">
+                				<h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+                			</span>
+
+                      <span class="titleIndicator">
+                				<h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+                			</span>
+                      <span class="titleIndicator">
+                				<h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+                			</span>
+
+                      <span class="titleIndicator">
+                				<h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+                			</span>
+                      <span class="titleIndicator">
+                				<h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+                			</span>
+
+                      <span class="titleIndicator">
+                				<h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+                			</span>
+                      <span class="titleIndicator">
+                				<h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+                			</span>
+
+                      <span class="titleIndicator">
+                				<h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+                			</span>-->
+                  </div>
+              </div>
+
+<!--<div ng-controller="SeguimientoModalsCtrl">
+  <div class="mapDisplay-icon display-icon" id="icon1" ng-click="openMapModal()">
+    <i class="fa fa-cogs fa-spin"></i>
+  </div>
+  <div class="chartDisplay-icon display-icon" id="icon2" ng-click="openChartModal()">
+    <i class="fa fa-cogs fa-spin"></i>
+  </div>
+</div>-->
+
+  <tracing-filters></tracing-filters>
+    <div class="row">
+            <div class="col-xs-10 content">
+              <!--<span class="titleIndicator">
+                <h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+              </span>
+
+              <span class="titleIndicator">
+                <h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+              </span>
+              <span class="titleIndicator">
+                <h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+              </span>
+
+              <span class="titleIndicator">
+                <h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+              </span>
+              <span class="titleIndicator">
+                <h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+              </span>
+
+              <span class="titleIndicator">
+                <h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+              </span>
+              <span class="titleIndicator">
+                <h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+              </span>
+
+              <span class="titleIndicator">
+                <h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+              </span>
+              <span class="titleIndicator">
+                <h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+              </span>
+
+              <span class="titleIndicator">
+                <h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+              </span>
+              <span class="titleIndicator">
+                <h5> Peso <span class="txt-color-red"><i class="fa fa-arrow-circle-down"></i>&nbsp;3%</span></h5>
+              </span>
+
+              <span class="titleIndicator">
+                <h5> Volumen <span class="txt-color-green"><i class="fa fa-arrow-circle-up"></i>&nbsp;1.2%</span></h5>
+              </span>-->
+              <operacion showbody=ctrl.showbody ng-repeat="operacion in ctrl.operaciones | filter:{ operationTitle: searchName} | orderBy:ctrl.dynamicOrderFunction(sortBy, ctrl.orderByDirection)" datos=operacion titles="ctrl.indicatorTitles"></operacion>
+
+            </div>
+            <div class="col-xs-2 sidebar-outer" ng-controller="flotChartCtrl as chart" >
+                <div hl-sticky="" class="fixed">
+                  <div>
+                      <span style="text-align:center;display:block;"><b>Tiempo total</b></span>
+                      <div class="txt-color-green" style="text-align:center; font-size: 1.2em;margin-bottom:5px">
+                        <i class="fa fa-arrow-circle-up"></i>&nbsp;1.2% </span>
+                      </div>
+
+                      <div style="text-align:center">
+                          <div flot height="100px" style="max-width:125px;display:inline-block" class="flot-chart-content" dataset="chart.flotChartData" options="chart.flotBarOptions;"></div>
+                      </div>
+                      <h5>
+                        <div class="font-normal">Estimado: 5d 16:36 </div>
+                        <div class="font-normal">Transcurrido: 5d 16:36 </div>
+                      </h5>
+                  </div>
+                  <div>
+                      <span style="text-align:center;display:block;"><b>Tiempo de tránsito</b></span>
+                      <div class="txt-color-green" style="text-align:center; font-size: 1.2em;margin-bottom:5px">
+                        <i class="fa fa-arrow-circle-up"></i>&nbsp;1.2% </span>
+                      </div>
+                      <div style="text-align:center">
+                          <div flot height="100px" style="max-width:125px;display:inline-block" class="flot-chart-content" dataset="chart.flotChartData" options="chart.flotBarOptions;"></div>
+                      </div>
+                      <h5>
+                        <div class="font-normal">Estimado: 5d 16:36 </div>
+                        <div class="font-normal">Transcurrido: 5d 16:36 </div>
+                      </h5>
+                  </div>
+                  <div>
+                      <span style="text-align:center;display:block;"><b>Tiempo de paradas</b></span>
+                      <div class="txt-color-green" style="text-align:center; font-size: 1.2em;margin-bottom:5px">
+                        <i class="fa fa-arrow-circle-up"></i>&nbsp;1.2% </span>
+                      </div>
+
+                      <div style="text-align:center">
+                          <div flot height="100px" style="max-width:125px;display:inline-block" class="flot-chart-content" dataset="chart.flotChartData" options="chart.flotBarOptions;"></div>
+                      </div>
+                      <h5>
+                        <div class="font-normal">Estimado: 5d 16:36 </div>
+                        <div class="font-normal">Transcurrido: 5d 16:36 <div>
+                      </h5>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div></div>

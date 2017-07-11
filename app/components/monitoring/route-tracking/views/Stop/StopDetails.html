@@ -1,0 +1,149 @@
+<div class="panel-body">
+    <div class="option-title">
+        <span>Paradas</span>
+    </div>
+    <div class="stop-list">
+        <div class="full-height-scroll" full-scroll>
+            <ol>
+                <li class="stops fadeInRight animated" style="animation-delay:{{0.1 * $index}}s" ng-repeat="item in stopItems" ng-class="{'selected' : item.selected}" ng-click="SelectStop(item, routeInfo)">
+                    <div style="border-bottom: 1px solid rgb(171, 168, 168);">
+                        <b>{{item.stopType}}</b>
+                    </div>
+                    <div>
+                        <b>{{item.stopName}}</b>
+                    </div>
+                    <div>
+                        {{item.stopLocation}}
+                    </div>
+                    <div>
+                        <span class="route-info-label">
+                          PLANIFICADO:
+                        </span> {{item.arrivalTimePlanned | date:'dd-MM-yyyy HH:mm:ss'}}
+                    </div>
+                    <div>
+                        <span class="route-info-label">
+                          REAL:
+                        </span> {{item.arrivalTimeReal | date:'dd-MM-yyyy HH:mm:ss'}}
+                    </div>
+                    <stop-sequence sequence-numbre="item.sequence" out-of-order="$index + 1 != item.sequence"></stop-sequence>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="show-route-options-details">
+        <div ng-show="showStopOptionsDetails" ng-click="SelectStopOption('instructionSelected')" style="animation-delay:0.01s" class="route-detail-option" ng-class="{'selected' : stopOptionsDetails['instructionSelected']}">
+            <div class="option-title">
+                Instrucciones
+                <i class="fa" aria-hidden="true" ng-class="stopOptionsDetails['instructionSelected'] ? 'fa-chevron-down' : 'fa-chevron-up'"></i>
+            </div>
+            <div ng-show="stopOptionsDetails['instructionSelected']">
+                aa
+            </div>
+        </div>
+        <div ng-show="showStopOptionsDetails" ng-click="SelectStopOption('stopSelected')" class="route-detail-option" style="animation-delay:0.02s" ng-class="{'selected' : stopOptionsDetails['stopSelected']}">
+            <div class="option-title">
+                Parada
+                <i class="fa" aria-hidden="true" ng-class="stopOptionsDetails['stopSelected'] ? 'fa-chevron-down' : 'fa-chevron-up'"></i>
+            </div>
+            <div ng-show="stopOptionsDetails['stopSelected']">
+                <table class="stop-details fadeInRight animated">
+                    <thead>
+                        <tr>
+                            <th>
+                                TIEMPO
+                            </th>
+                            <th>
+                                PLANEADO
+                            </th>
+                            <th>
+                                REAL
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                TOTAL
+                            </td>
+                            <td>
+                                {{ selectedRouteDetails.stops.totalTime.planned }}
+                            </td>
+                            <td>
+                                {{ selectedRouteDetails.stops.totalTime.real }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ESPERA
+                            </td>
+                            <td>
+                                {{ selectedRouteDetails.stops.waitTime.planned }}
+                            </td>
+                            <td>
+                                {{ selectedRouteDetails.stops.waitTime.real }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                OPERATIVO
+                            </td>
+                            <td>
+                                {{ selectedRouteDetails.stops.operativeTime.planned }}
+                            </td>
+                            <td>
+                                {{ selectedRouteDetails.stops.operativeTime.real }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div ng-show="showStopOptionsDetails" ng-click="SelectStopOption('binnacleSelected')" class="route-detail-option" style="animation-delay:0.03s" ng-class="{'selected' : stopOptionsDetails['binnacleSelected']}">
+            <div class="option-title">
+                Bitacora
+                <i class="fa" aria-hidden="true" ng-class="stopOptionsDetails['binnacleSelected'] ? 'fa-chevron-down' : 'fa-chevron-up'"></i>
+            </div>
+            <div ng-show="stopOptionsDetails['binnacleSelected']" ng-class="{ 'binnacle-selected': stopOptionsDetails['binnacleSelected']}">
+                <div class="content full-height-scroll" full-scroll>
+                    <ol class="fadeIn animated">
+                        <li class="incidents" ng-repeat="item in routeInfo.incidents">
+                            <div class="incident-title">
+                                <b>{{item.date | date:'dd-MM-yyyy HH:mm:ss'}}</b>
+                            </div>
+                            <div class="incident-subtitle">
+                                {{item.location}}
+                            </div>
+                            <div>
+                                {{item.description}}
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+        <div ng-show="showStopOptionsDetails" ng-click="SelectStopOption('incidentsSelected')" class="route-detail-option" style="animation-delay:0.04s" ng-class="{'selected' : stopOptionsDetails['incidentsSelected']}">
+            <div class="option-title">
+                Incidentes
+                <i class="fa" aria-hidden="true" ng-class="stopOptionsDetails['incidentsSelected'] ? 'fa-chevron-down' : 'fa-chevron-up'"></i>
+            </div>
+            <div ng-show="stopOptionsDetails['incidentsSelected']" ng-class="{ 'incidents-selected': stopOptionsDetails['incidentsSelected']}">
+                <div class="content full-height-scroll" full-scroll>
+                    <ol class="fadeIn animated">
+                        <li class="incidents" ng-repeat="item in routeInfo.incidents">
+                            <div class="incident-title">
+                                <b>{{item.date | date:'dd-MM-yyyy HH:mm:ss'}}</b>
+                            </div>
+                            <div class="incident-subtitle">
+                                {{item.location}}
+                            </div>
+                            <div>
+                                {{item.description}}
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

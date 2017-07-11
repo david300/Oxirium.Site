@@ -1,0 +1,42 @@
+<div class="panel-body">
+    <div class="option-title">
+        <span>Instrucciones</span>
+        <select class="form-control option-select" ng-options="group as group.label for group in instructionGroupOptions track by group.id"
+            ng-model="selectedGroupOption" ng-change="ChangeSelectedGroupOption()"></select>
+    </div>
+    <div class="instruction-list">
+        <div class="full-height-scroll" full-scroll>
+            <ol class="fadeIn animated">
+                <li ng-repeat="item in routeInfo.stops">
+                    <div class="instruction-list-item" ng-class="{'selected' : item.selected}">
+                        <i class="fa" aria-hidden="true" ng-class="item.selected ? 'fa-angle-down' : 'fa-angle-right'"></i>                        {{item.stopName}}
+                    </div>
+                    <div ng-show="item.selected">
+                        <div class="instruction-type">
+                            <b>Carga</b>
+                        </div>
+                        <div>
+                            <ol class="fadeIn animated">
+                                <li ng-repeat="item in groupedInstructionList.load">
+                                    <div ng-include="itemGroupBy">
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="instruction-type">
+                            <b>Descarga</b>
+                        </div>
+                        <div>
+                            <ol class="fadeIn animated">
+                                <li ng-repeat="item in groupedInstructionList.unload">
+                                    <div ng-include="itemGroupBy">
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

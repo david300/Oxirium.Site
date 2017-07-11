@@ -1,0 +1,76 @@
+<script>
+        (function () {
+            var animenuToggle = document.querySelector('.animenu__toggle'),
+                animenuNav = document.querySelector('.animenu__nav'),
+                hasClass = function (elem, className) {
+                    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+                },
+                toggleClass = function (elem, className) {
+                    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+                    if (hasClass(elem, className)) {
+                        while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                            newClass = newClass.replace(' ' + className + ' ', ' ');
+                        }
+                        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+                    } else {
+                        elem.className += ' ' + className;
+                    }
+                },
+                animenuToggleNav = function () {
+                    toggleClass(animenuToggle, "animenu__toggle--active");
+                    toggleClass(animenuNav, "animenu__nav--open");
+                }
+
+            if (!animenuToggle.addEventListener) {
+                animenuToggle.attachEvent("onclick", animenuToggleNav);
+            } else {
+                animenuToggle.addEventListener('click', animenuToggleNav);
+            }
+        })()
+    </script>
+
+<div class="row">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="top-nav-logo">
+            <img alt="image" class="img-circle" src="assets/img/logo top-nav.png" />
+            <div class="top-nav-title">
+                LOGPOINT
+            </div>
+        </div>
+        <div class="navbar-header">
+            <nav class="animenu">
+                <button class="animenu__toggle">
+                    <span class="animenu__toggle__bar"></span>
+                    <span class="animenu__toggle__bar"></span>
+                    <span class="animenu__toggle__bar"></span>
+                </button>
+                <ul class="animenu__nav">
+                    <li>
+                        <a href="#">HOJA DE RUTA</a>
+                        <ul class="animenu__nav__child">
+                            <li><a href="">Sub Item 1</a></li>
+                            <li><a href="">Sub Item 2</a></li>
+                            <li><a href="">Sub Item 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">RED DE ACTIVOS</a>
+                        <ul class="animenu__nav__child">
+                            <li><a href="">Sub Item 1</a></li>
+                            <li><a href="">Sub Item 2</a></li>
+                            <li><a href="">Sub Item 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">CUMPLIMIENTO</a>
+                        <ul class="animenu__nav__child">
+                            <li><a href="">Sub Item 1</a></li>
+                            <li><a href="">Sub Item 2</a></li>
+                            <li><a href="">Sub Item 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+</div>

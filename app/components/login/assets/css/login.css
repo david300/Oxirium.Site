@@ -1,0 +1,243 @@
+html, body{
+  height: 100%;
+}
+
+h3{
+      border-left: 4px solid #F7AB59;
+      color: #848484 !important;
+      font-size: 16px;
+      font-weight: 700;
+      padding-left: 10px;
+}
+input[type=text]{
+     font-size: 14px;
+     padding: 10px 5px;
+     line-height: 14px;
+     width: 100%;
+     box-sizing: border-box;
+}
+button{
+    width: 100%;
+}
+label{
+    font-size: 13px;
+    vertical-align: 2px;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        background-position: 1600px center;
+    }
+}
+@media only screen and (max-width: 765px) {
+    body {
+        background-position: 1200px center;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+  .slider{
+      width:74%;
+  }
+  .menu-login{
+     width:26%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .slider{
+      width:65%;
+  }
+  .menu-login{
+     width:35%;
+  }
+}
+@media only screen and (max-width: 786px) {
+  .slider{
+      width:50%;
+  }
+  .menu-login{
+     width:50%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .slider{
+      display: none;
+  }
+  .menu-login{
+     width:100%;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  .slider .box{
+      width: 70% !important;
+      margin: 10% 5% 0 7%
+  }
+  .slider .box .title{
+      font-size: 28px !important;
+  }
+}
+
+div.login-ui-view{
+  display: flex;
+  flex: 1;
+}
+
+.logo{
+  text-align: center;
+  margin-bottom: 2.5em;
+  flex: 0 auto;
+}
+
+.register-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.register-header > h3{
+  flex: 0;
+  height: 1.2em;
+  padding-left: 5px;
+}
+
+.register-header > img{
+  flex: 0;
+  align-self: center;
+}
+
+
+.login-footer{
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.menu-login{
+  background-color: #ffffff;
+  color: inherit;
+  padding: 15px 20px 20px 20px;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0;
+  display: flex;
+  flex: 0 auto;
+  flex-direction: column;
+  border-left: 5px solid rgba(247, 165, 74, 0.38);
+  width: 100%;
+}
+
+.menu-login .form-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-login ul.menu-options {
+    background-color: white;
+    color: rgb(148,148,148);
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-login ul.menu-options li {
+    border-radius: 0px;
+    display: table-cell;
+    width: 50%;
+}
+
+.menu-login ul.menu-options li.active {
+    border-left: 5px solid rgba(247, 165, 74, 0.79);
+}
+
+.menu-login form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-login .login-form{
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-login .register-link{
+  flex: 1;
+  justify-content: center;
+  margin-top: 2em;
+  display: flex;
+}
+
+.menu-login .register-link > a {
+  color: black;
+  flex: 0 auto;
+  height: 1.5em;
+}
+
+.menu-login form > div.form-group{
+  display: flex;
+}
+
+.menu-login form > div.form-group.center{
+  justify-content: center;
+}
+
+.menu-login span.red{
+    font-size: 13px;
+    color: #FB6565;
+}
+
+.slider{
+    float: left;
+    height: 100%;
+}
+
+.slider .box{
+    padding: 30px;
+    width: 350px;
+    background-color: rgba(89,66,58,0.2) ;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 10% 0 0 10%;
+}
+
+.slider .box .title{
+    font-size: 38px;
+    font-weight: 300;
+    display: block;
+    margin: 0 0 30px 0;
+    padding: 0 0 0 58px;
+    background-image: url(/assets/img/slp-iso.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    line-height: 45px;
+}
+
+.login-btn{
+  width: auto;
+  align-self: flex-end;
+}
+
+.login-actions{
+    margin-top: 15px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 80%;
+}
+
+.form-group-split{
+  flex:1;
+}
+
+.form-group-split:nth-child(2){
+  margin-left:5px;
+}

@@ -1,0 +1,35 @@
+<div class="purchase-order" ng-click="item.selected = !item.selected" ng-class="{'selected' : item.selected}">
+  <div class="purchase-order-code">
+    <i class="fa" aria-hidden="true" ng-class="item.selected ? 'fa-angle-down' : 'fa-angle-right'"></i>
+    <span>{{item.purchaseOrderCode}}</span>
+  </div>
+  <ol ng-show="item.selected">
+    <li ng-repeat="product in item.products" class="purchase-order-product">
+      <div>{{product.productName}}</div>
+      <table class="product-details fadeInRight animated">
+        <thead>
+          <tr>
+            <th>
+              PLANIFICADO
+            </th>
+            <th>
+              REAL
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {{ product.planned }} {{ product.unit }}
+            </td>
+            <td>
+              {{ product.real }} {{ product.unit }}
+              <arrow-percentage percentage="{{ (product.real * 100 / product.planned) - 100}}">
+              </arrow-percentage>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ol>
+</div>

@@ -1,0 +1,21 @@
+<!-- Wrapper-->
+<div id="wrapper">
+
+    <!-- Navigation -->
+
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div id="page-wrapper" class="gray-bg {{$state.current.name}}" fit-height style="display: flex;flex-flow: column;overflow: hidden;height:100% !important">
+
+        <!-- Page wrapper -->
+        <div ng-include="'app/components/common/views/topnavbar.html'" style="flex: 0 1 auto;"></div>
+        <div class="fh-breadcrumb route-tracking" style="flex: 1 1 auto;display:flex;flex-flow: row;">
+            <div ui-view class="full-height base-view" style="flex: 1;display:flex;"></div>
+        </div>
+        <!-- Footer -->
+
+    </div>
+    <!-- End page wrapper-->
+
+</div>
+<!-- End wrapper-->

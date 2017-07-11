@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title set in pageTitle directive -->
+    <title page-title></title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link href="assets/css/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Main Inspinia CSS files -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/principal.css" rel="stylesheet">
+    <link id="loadBefore" href="assets/css/style.css" rel="stylesheet">
+
+    <script src="node_modules/crypto-js/crypto-js.js"></script>
+
+    <!-- injector:css -->
+    <link rel="stylesheet" href="/app/components/login/assets/css/login.css">
+    <link rel="stylesheet" href="/app/components/monitoring/route-tracking/assets/route-tracking.css">
+    <link rel="stylesheet" href="/app/shared/directives/InputSelect/assets/InputSelect.css">
+    <link rel="stylesheet" href="/app/shared/directives/InputText/assets/InputText.css">
+    <link rel="stylesheet" href="/app/shared/directives/Selector/assets/Selector.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/animation.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/fontello-codes.css">
+    <link rel="stylesheet" href="/assets/css/fontello-embedded.css">
+    <link rel="stylesheet" href="/assets/css/fontello-ie7-codes.css">
+    <link rel="stylesheet" href="/assets/css/fontello-ie7.css">
+    <link rel="stylesheet" href="/assets/css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/principal.css">
+    <link rel="stylesheet" href="/assets/css/slp-embedded.css">
+    <link rel="stylesheet" href="/assets/css/slp.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/bower_components/angular-loading-bar/build/loading-bar.css">
+    <!-- endinjector -->
+
+
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+
+<body class="{{$state.current.data.specialClass}} skin-3 {{ backgroundImage }}" landing-scrollspy id="page-top" ng-controller="ContentCtrl">
+
+    <!-- Main view  -->
+    <div ui-view class="main-view" style="height:100%"></div>
+
+    <!-- jQuery and Bootstrap -->
+    <script src="assets/libs/jquery/jquery-2.1.1.min.js"></script>
+    <script src="assets/libs/plugins/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/libs/bootstrap/bootstrap.min.js"></script>
+
+    <!-- MetsiMenu -->
+    <script src="assets/libs/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- SlimScroll -->
+    <script src="assets/libs/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Peace JS -->
+    <script src="assets/libs/plugins/pace/pace.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="assets/libs/inspinia.js"></script>
+
+    <!-- Main Angular scripts-->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="assets/libs/angular/angular-sanitize.js"></script>
+    <script src="assets/libs/plugins/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="assets/libs/angular-translate/angular-translate.min.js"></script>
+    <script src="assets/libs/ui-router/angular-ui-router.min.js"></script>
+    <script src="assets/libs/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+    <script src="assets/libs/plugins/angular-idle/angular-idle.js"></script>
+    <script src="assets/libs/easypiechart/easypiechart.js"></script>
+    <script src="assets/libs/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/libs/scrollbar/scrollbar.js"></script>
+    <script src="assets/libs/angular-sticky/angular-sticky.js"></script>
+    <!--
+         You need to include this script on any page that has a Google Map.
+         When using Google Maps on your own site you MUST signup for your own API key at:
+         https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+         After your sign up replace the key in the URL below..
+        -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQTpXj82d8UpCi97wzo_nKXL7nYrd4G70"></script>
+
+    <!-- injector:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/components/common/constants/API_URL_CONSTANT.js"></script>
+    <script src="/app/components/common/constants/INDICATOR_TITLES_CONSTANT.js"></script>
+    <script src="/app/components/common/constants/STATUS_CONSTANT.js"></script>
+    <script src="/app/components/common/controllers/ContentController.js"></script>
+    <script src="/app/components/common/directives/directives.js"></script>
+    <script src="/app/components/common/filters/anyInvalidDirtyFields.js"></script>
+
+    <!-- Login -->
+    <script src="/app/components/login/loginConstants.js"></script>
+    <script src="/app/components/login/loginController.js"></script>
+    <script src="/app/components/login/loginService.js"></script>
+    <script src="/app/components/login/registerController.js"></script>
+
+    <!-- Monitoring -->
+    <script src="/app/components/monitoring/route-tracking/controllers/BinnacleController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/controllers/IncidentController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/controllers/InstructionController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/controllers/RouteTrackingController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/controllers/RouteTrackingMapController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/controllers/RouteTrackingSideMenuController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/controllers/StopController.js"></script>
+    <script src="/app/components/monitoring/route-tracking/services/BinnacleService.js"></script>
+    <script src="/app/components/monitoring/route-tracking/services/IncidentService.js"></script>
+    <script src="/app/components/monitoring/route-tracking/services/InstructionService.js"></script>
+    <script src="/app/components/monitoring/route-tracking/services/MapService.js"></script>
+    <script src="/app/components/monitoring/route-tracking/services/RouteTrackingService.js"></script>
+    <script src="/app/components/monitoring/route-tracking/services/StopService.js"></script>
+
+    <!-- Freights -->
+    <script src="/app/components/freights/" type="text/javascript"></script>
+
+    <script src="/app/routes.js"></script>
+    <script src="/app/shared/directives/GeneralInfoItem/GeneralInfoItemDirective.js"></script>
+    <script src="/app/shared/directives/InputSelect/controllers/InputTextController.js"></script>
+    <script src="/app/shared/directives/InputSelect/InputSelectDirective.js"></script>
+    <script src="/app/shared/directives/InputText/controllers/InputTextController.js"></script>
+    <script src="/app/shared/directives/InputText/InputTextDirective.js"></script>
+    <script src="/app/shared/directives/Selector/controllers/SelectorController.js"></script>
+    <script src="/app/shared/directives/Selector/controllers/SelectorModalController.js"></script>
+    <script src="/app/shared/directives/Selector/SelectorDirective.js"></script>
+    <script src="/app/shared/directives/StatusIcon/StatusIcon.js"></script>
+    <script src="/app/shared/directives/StopSequence/StopSequence.js"></script>
+    <script src="/app/shared/services/CarrierService.js"></script>
+    <script src="/app/shared/services/DriverService.js"></script>
+    <script src="/app/shared/services/GroupService.js"></script>
+    <script src="/app/shared/services/PaginationService.js"></script>
+    <script src="/app/shared/services/RouteService.js"></script>
+    <script src="/app/shared/services/StopService.js"></script>
+    <script src="/app/translations/TranslateController.js"></script>
+    <script src="/app/translations/TranslateProvider.js"></script>
+    <script src="/app/translations/TranslateService.js"></script>
+    <script src="/outdated/controllers/seguimiento/logController.js"></script>
+    <script src="/outdated/controllers/seguimiento/operationController.js"></script>
+    <script src="/outdated/controllers/seguimiento/operationgroupController.js"></script>
+    <script src="/outdated/controllers/seguimiento/seguimientoController.js"></script>
+    <script src="/outdated/directives.js"></script>
+    <script src="/outdated/services/operationgroupservice.js"></script>
+    <script src="/bower_components/re-tree/re-tree.js"></script>
+    <script src="/bower_components/ng-device-detector/ng-device-detector.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.js"></script>
+    <script src="/bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
+    <script src="/bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <script src="/bower_components/markerclustererplus/src/markerclusterer.js"></script>
+    <script src="/bower_components/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js"></script>
+    <script src="/bower_components/google-maps-utility-library-v3-infobox/dist/infobox.js"></script>
+    <script src="/bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js"></script>
+    <script src="/bower_components/js-rich-marker/src/richmarker.js"></script>
+    <script src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <!-- endinjector -->
+
+</body>
+
+</html>

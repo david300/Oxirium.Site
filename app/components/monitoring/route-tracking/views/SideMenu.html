@@ -1,0 +1,226 @@
+<div class="spin-icon" ng-click="ClickToggleSideMenu()">
+  <i class="fa fa-cogs fa-spin"></i>
+</div>
+<div class="fh-column route-tracking-side-menu" route-menu-full-scroll>
+  <div class="panel-body top-info" ng-show="routeInfo.show" ng-repeat="routeInfo in pagedRoutes" ng-click="ClickRoute(routeInfo)">
+    <general-info-item route-info="routeInfo.general" selected="moreInfo" close-fn="CloseRoute()"></general-info-item>
+  </div>
+  <div ng-show="moreInfo" class="tabs-container geo-menu-options">
+    <ul class="nav nav-tabs menu-options">
+      <li ng-class="{'active': routeOptionsDetails.stopSelected}">
+        <a class="stops" ng-click="ShowStops()">
+          <i class="slp-stop"></i>
+        </a>
+      </li>
+      <li ng-class="{'active': routeOptionsDetails.instructionSelected}">
+        <a class="instructions" ng-click="ShowInstructions()">
+          <i class="slp-instructions"></i>
+        </a>
+      </li>
+      <li ng-class="{'active': routeOptionsDetails.incidentsSelected}">
+        <a class="incidents" ng-click="ShowIncidents()">
+          <span>123</span>
+          <i class="slp-incident"></i>
+        </a>
+      </li>
+      <li ng-class="{'active': routeOptionsDetails.binnacleSelected}" >
+        <a class="binnacles" ng-click="ShowBinnacle()">
+          <i class="slp-binnacle"></i>
+        </a>
+      </li>
+      <li class="">
+        <a class="chats" data-toggle="tab" href="#tab-5" target="_self">
+          <i class="slp-chat"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div ng-show="moreInfo" class="tab-content full-height-scroll" full-scroll>
+    <div ng-show="routeOptionsDetails.stopSelected" style="height: 100%" ui-view="StopDetails">
+    </div>
+    <div ng-show="routeOptionsDetails.instructionSelected" ui-view="InstructionDetails">
+    </div>
+    <div ng-show="routeOptionsDetails.incidentsSelected" ui-view="IncidentDetails">
+    </div>
+    <div ng-show="routeOptionsDetails.binnacleSelected" ui-view="BinnacleDetails">
+    </div>
+    <div id="tab-5" ng-show="moreInfo" class="tab-pane chat-tab">
+      <div class="panel-body">
+        <div class="option-title">
+          <span>Chat</span>
+        </div>
+        <div class="small-chat-box ng-small-chat fadeInRight animated">
+          <div class="content full-height-scroll" chat-slim-scroll>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+            <div class="left">
+              <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+                <small class="chat-date">
+                                10:02 am
+                            </small>
+              </div>
+            </div>
+            <div class="right">
+              <div class="chat-message">
+                Lorem Ipsum is simpl.
+                <small class="chat-date">
+                                11:24 am
+                            </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-chat">
+          <div class="input-group input-group-sm"><input type="text" class="form-control"> <span class="input-group-btn"> <button
+                        class="btn btn-primary" type="button">Enviar
+                </button> </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div ng-show="!moreInfo" style="display: flex;justify-content: center;">
+  <ul ng-if="pager.pages.length" class="pagination" style="margin: 10px 0;">
+    <li ng-class="{disabled:pager.currentPage === 1}">
+      <a ng-click="SetPage(1)">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <i class="fa fa-chevron-left" aria-hidden="true" style="margin-left: -5px;"></i>
+      </a>
+    </li>
+    <li ng-class="{disabled:pager.currentPage === 1}">
+      <a ng-click="SetPage(pager.currentPage - 1)">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+      <a ng-click="SetPage(page)">{{page}}</a>
+    </li>
+    <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+      <a ng-click="SetPage(pager.currentPage + 1)">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+      <a ng-click="SetPage(pager.totalPages)">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <i class="fa fa-chevron-right" aria-hidden="true" style="margin-left: -5px;"></i>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+  <div class="col-xs-8 content">
+      <operacion showbody=ctrl.showbody ng-repeat="operacion in ctrl.operaciones | filter:{ title: searchName} | orderBy:dynamicOrderFunction(sortBy, ctrl.orderByDirection)" get-link-url="ctrl.getLinkUrl(id)" data=operacion></operacion>
+  </div>

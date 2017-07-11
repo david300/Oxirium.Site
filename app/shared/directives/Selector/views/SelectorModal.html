@@ -1,0 +1,28 @@
+<div class="selector-modal modal-header">
+    <h3 class="modal-title" id="modal-title">Selector {{header}}</h3>
+    <div>
+        <button class="btn btn-primary" type="button" ng-click="ConfirmSelection()">Aceptar</button>
+        <button class="btn btn-warning" type="button" ng-click="Cancel()">Cancelar</button>
+    </div>    
+</div>
+<div class="selector-modal modal-body" id="modal-body">
+    <table class="selector-table">
+        <thead>
+            <tr>
+                <th ng-show="isMultiSelect" style="width: 50px;">
+                    <input type="checkbox" ng-click="ToggleAll()" ng-model="isAllSelected" aria-label="Slave input">
+                </th>
+                <th ng-repeat="header in headers"><b>{{header}}</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-click="Select(item);$event.stopPropagation();" ng-repeat="item in items track by $index">
+                <td ng-show="isMultiSelect">
+                    <input type="checkbox" ng-model="item.selected" ng-click="OptionToggled();$event.stopPropagation();" aria-label="Slave input">
+                </td>
+                <td ng-repeat="header in headers"> {{item[header]}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="selector-modal modal-footer"></div>

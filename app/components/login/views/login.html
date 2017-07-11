@@ -1,0 +1,54 @@
+  <div class="menu-login ">
+      <div class="logo">
+        <img src="assets/img/slp.png"/>
+      </div>
+      <form class="m-t" role="form" ng-submit="login()">
+          <div class="login-form">
+            <div class="form-group">
+              <input-text type="mail" text-model="username" placeholder="{{ 'REGISTER.FIELDS.EMAIL' | translate }}"></input-text>
+            </div>
+            <div class="form-group">
+              <input-text type="password" text-model="password" placeholder="{{ 'REGISTER.FIELDS.PASSWORD' | translate }}"></input-text>
+            </div>
+            <div class="login-actions">
+              <a href="#" ng-click="logout()">
+                  <small>{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</small>
+              </a>
+              <button type="submit" class="m-b login-btn"><small>{{ 'LOGIN.LOG_IN' | translate }}</small></button>
+            </div>
+          </div>
+          <div class="register-link">
+            <a ui-sref="landingLogin.register"><small>{{ 'LOGIN.REGISTER' | translate }}</small></a>
+          </div>
+      </form>
+      <div class="login-footer">
+        <div>
+          <img src="assets/img/oXirium_chico.png"/>
+          <div class="copyright">
+            Copyright 2017 Oxirium S.A.
+          </div>
+        </div>
+        <div>
+        <div class="form-footer">
+          <div ng-controller="TranslateController">
+            <span>
+              <small>Language</small>
+            </span>
+            <div class="mdl-select mdl-js-select mdl-select--floating-label">
+        <select class="mdl-select__input" id="professsion" name="professsion">
+          <option value=""></option>
+          <option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>
+        </select>
+        <label class="mdl-select__label" for="professsion">Profession</label>
+      </div>
+            <!--<input-select items="languages" name="'Language'" select-model="selectedLanguage"></input-select>
+            <select ng-model="selectedLanguage" ng-change="changeLanguage(selectedLanguage)" ng-options="language as language.Label for language in languages track by language.Id"></select>-->
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>

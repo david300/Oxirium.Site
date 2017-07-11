@@ -1,0 +1,71 @@
+<div class="menu-login ">
+    <div class="logo register-header">
+      <h3>
+        {{ 'REGISTER.REGISTRATION' | translate }}
+      </h3>
+      <img src="assets/img/slp-horizontal.png"/>
+    </div>
+      <form class="m-t" role="form" name="registerForm" ng-submit="registerUser()">
+          <div class="form-group">
+              <input-text text-model="register.company" placeholder="{{ 'REGISTER.FIELDS.COMPANY' | translate }}"></input-text>
+              <!--<input type="text" ng-model="register.company" class="form-control" pattern=".{3,}" placeholder="{{ 'REGISTER.FIELDS.COMPANY' | translate }}" oninvalid="this.setCustomValidity('Tres caracteres mínimo.')"
+                  oninput="setCustomValidity('')" required>-->
+          </div>
+          <div class="form-group">
+              <div class="form-group-split">
+                <input-text text-model="register.CUIT" placeholder="{{ 'REGISTER.FIELDS.CUIT' | translate }}"></input-text>
+                <!--<input type="text" ng-model="register.CUIT" class="form-control" pattern="[0-9]{11}" placeholder="{{ 'REGISTER.FIELDS.CUIT' | translate }}" oninvalid="this.setCustomValidity('Solo números. Ej: 20123456782')"
+                    oninput="setCustomValidity('')" required>-->
+              </div>
+              <div class="form-group-split">
+                <input-text text-model="register.DNI" placeholder="{{ 'REGISTER.FIELDS.DNI' | translate }}"></input-text>
+                <!--<input type="text" ng-model="register.DNI" class="form-control" pattern="[0-9]{6,8}" placeholder="{{ 'REGISTER.FIELDS.DNI' | translate }}" oninvalid="this.setCustomValidity('Solo números. Ej: 12345678')"
+                    oninput="setCustomValidity('')" required>-->
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="form-group-split">
+                <input-text text-model="register.name" placeholder="{{ 'REGISTER.FIELDS.NAME' | translate }}"></input-text>
+
+                <!--<input type="text" ng-model="register.name" class="form-control" pattern=".{3,}" placeholder="{{ 'REGISTER.FIELDS.NAME' | translate }}" oninvalid="this.setCustomValidity('Tres caracteres mínimo.')"
+                    oninput="setCustomValidity('')" required>-->
+              </div>
+              <div class="form-group-split">
+                <input-text text-model="register.lastName" placeholder="{{ 'REGISTER.FIELDS.LASTNAME' | translate }}"></input-text>
+                <!--<input type="text" ng-model="register.lastName" class="form-control" pattern=".{3,}" placeholder="{{ 'REGISTER.FIELDS.LASTNAME' | translate }}" oninvalid="this.setCustomValidity('Tres caracteres mínimo.')"
+                    oninput="setCustomValidity('')" required>-->
+              </div>
+          </div>
+          <div class="form-group">
+            <input-text type="mail" text-model="register.mail" placeholder="{{ 'REGISTER.FIELDS.EMAIL' | translate }}"></input-text>
+            <!--<input type="mail" ng-model="register.mail" class="form-control" placeholder="{{ 'REGISTER.FIELDS.EMAIL' | translate }}" required>-->
+          </div>
+          <div class="form-group">
+              <div class="form-group-split">
+                <input-text type="password" text-model="register.password" placeholder="{{ 'REGISTER.FIELDS.PASSWORD' | translate }}"></input-text>
+                <!--<input type="password" ng-model="register.password" class="form-control" placeholder="{{ 'REGISTER.FIELDS.PASSWORD' | translate }}" required>-->
+              </div>
+              <div class="form-group-split">
+                <input-text type="password" text-model="register.passwordRepeated" placeholder="{{ 'REGISTER.FIELDS.PASSWORD_REPEAT' | translate }}"></input-text>
+                <!--<input type="password" ng-model="register.passwordRepeated" class="form-control" placeholder="{{ 'REGISTER.FIELDS.PASSWORD_REPEAT' | translate }}" required>-->
+              </div>
+          </div>
+          <div class="form-group center">
+              <div vc-recaptcha class="g-recaptcha" ng-model="register.captchaResponse" key="'6LeNrxwUAAAAABPYwBQeqhAs7F8KnbzrG3NpuG2X'"></div>
+          </div>
+          <div class="form-group">
+              <input ng-model="register.acceptTermsConditions" type="checkbox" id="accept" required><label for="accept">Acepto los <a href="#">Terminos y Condiciones</a></label>
+          </div>
+          <button type="submit" class="m-b">{{ 'REGISTER.REGISTER_ME' | translate }}</button>
+      </form>
+    <div class="login-footer">
+      <div>
+        <img src="assets/img/oXirium_chico.png"/>
+      </div>
+      <div>
+        <small>
+          Copyright 2017 Oxirium S.A.
+        </small>
+      </div>
+    </div>
+</div>

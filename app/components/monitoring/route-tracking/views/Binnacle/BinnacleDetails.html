@@ -1,0 +1,20 @@
+<div class="panel-body">
+    <div class="option-title">
+        <span>Bitácora</span>
+    </div>
+    <ol class="fadeIn animated">
+        <li ng-repeat="item in binnacleItems">
+            <div class="binnacle-item">
+                <div class="binnacle-item-title">
+                    <b>{{item.date | date:'dd-MM-yyyy HH:mm:ss'}}</b>
+                </div>
+                <div class="binnacle-item-subtitle">
+                    {{item.location}}
+                </div>
+                <div>
+                    {{item.description}}
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>

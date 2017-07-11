@@ -1,0 +1,79 @@
+<div>
+  <div class="close-detail-info" ng-class="{'active' : selected}" ng-click="Close();$event.stopPropagation()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+  <div class="carrier-info">
+    <span class="type">
+      <div class="route-name">
+        <status-icon style="margin-bottom: 5px;" type="routeInfo.type"></status-icon>
+        <b>{{routeInfo.routeName}}</b>
+      </div>            
+      <div class="percentage-completed-route">        
+        {{routeInfo.percentageCompleted}}%
+      </div>
+    </span>
+    <div class="progress-bar">
+      <div 
+        class="progress-bar-completed slideInLeft animated" 
+        ng-class="{'green' : routeInfo.type <= 2, 'red' : routeInfo.type > 2}" 
+        style="width:{{routeInfo.percentageCompleted}}%">
+      </div>
+    </div>
+    <div>
+        <span class="info-data">
+          {{routeInfo.companyName}}
+        </span>
+        <span class="info-data">
+          {{routeInfo.groupName}}
+        </span>
+    </div>
+    <div>
+        <span class="info-data">
+          {{routeInfo.operationName}}
+        </span>
+    </div>
+    <!--<div class="flip-container" ng-class="{'hover' : routeInfo.showDriverInfo}">
+      <div class="flipper">
+        <div class="front">
+          
+        </div>
+       <div class="back" style="display: flex;">
+          <div style="display: flex;flex-direction: column;flex:1;">
+            <div>
+              <span class="info-label">
+              Nombre:
+            </span>
+              <span class="info-data">
+              {{routeInfo.driver.name}}
+            </span>
+            </div>
+            <div>
+              <span class="info-label">
+              Tel:
+            </span>
+              <span class="info-data">
+              {{routeInfo.driver.phone}}
+            </span>
+            </div>
+            <span class="status">
+          <statusdot state="{Id:routeInfo.driver.status.id}"></statusdot>
+            <span>
+              {{routeInfo.driver.status.text}} - Ult. {{routeInfo.driver.lastConnection}}
+            </span>
+            </span>
+          </div>
+          <div style="flex:0 auto;">
+            <img class="driver-picture" src="assets/img/foto.png" alt="Picture">
+          </div>
+        </div>
+      </div>
+    </div>-->
+  </div>
+  <!--<div style="display:flex; justify-content:flex-end;">
+    <div class="flip-info-container" ng-click="routeInfo.showDriverInfo = !routeInfo.showDriverInfo;$event.stopPropagation()">
+      <div class="dot" ng-class="{'animate-dot' : routeInfo.showDriverInfo}" style="animation-delay:{{ routeInfo.showDriverInfo ? 0.1 : 0.3}}s"></div>
+      <div class="dot" ng-class="{'animate-dot' : routeInfo.showDriverInfo}" style="animation-delay:0.2s"></div>
+      <div class="dot" ng-class="{'animate-dot' : routeInfo.showDriverInfo}" style="animation-delay:{{ routeInfo.showDriverInfo ? 0.3 : 0.1}}s"></div>
+    </div>
+  </div>-->
+</div>

@@ -1,0 +1,13 @@
+<div class="panel-body">
+    <div class="option-title">
+        <span>Incidentes</span>
+        <select class="form-control option-select" ng-options="group as group.label for group in incidentGroupOptions track by group.id"
+            ng-model="selectedGroupOption" ng-change="ChangeSelectedGroupOption()"></select>
+    </div>
+    <ol class="fadeIn animated">
+        <li ng-repeat="item in groupedIncidentsList">
+            <div ng-include="itemGroupBy">
+            </div>
+        </li>
+    </ol>
+</div>

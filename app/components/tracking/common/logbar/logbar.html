@@ -1,0 +1,14 @@
+<div class="col-xs-4 sidebar-outer">
+  <div hl-sticky="" class="fixed">
+    <div class="full-height-scroll tabs-container" full-scroll>
+      <uib-tabset>
+        <uib-tab ng-repeat="tab in tabs" active="tab.active" disable="tab.disabled">
+          <uib-tab-heading>
+            <span class="{{tab.icon}}"></span> {{tab.title}}
+          </uib-tab-heading>
+          <div ng-include src=tab.templateUrl></div>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+  </div>
+</div>

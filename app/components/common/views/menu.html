@@ -1,0 +1,29 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="profile-element" uib-dropdown>
+                    <img alt="image" class="img-circle" src="assets/img/slp-icon.png"/>
+                </div>
+            </li>
+            <li ng-class="{'active active-main': $state.includes('monitoring')}">
+                <a ui-sref="base.monitoring.routeTracking.list" ng-class="{'selected-menu': $state.includes('base.monitoring')}"><i class="icon-monitoring"></i></a>
+                <!--
+                    <span class="nav-label">{{ 'MENU.MONITORING.TITLE' | translate }}</span> <span class="fa arrow"></span>
+                    <ul class="nav nav-second-level collapse" ng-class="{'in': $state.includes('monitoring')}">
+                    <li ui-sref-active="active"><a ui-sref="base.monitoring.routeTracking.list">{{ 'MENU.MONITORING.ROUTETRACKING' | translate }}</a></li>
+                </ul>-->
+            </li>
+
+            <!--<li ng-class="{active: $state.includes('tracking')}">
+                <a href="index.html"></i> <span class="nav-label">{{ 'MENU.TRACKING.TITLE' | translate }}</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('tracking')}">
+                    <li ui-sref-active="active"><a ui-sref="base.tracking">{{ 'MENU.TRACKING.MAIN' | translate }}</a></li>
+                </ul>
+            </li>-->
+        </ul>
+    </div>
+</nav>
+<div class="separator">
+
+</div>
