@@ -2,10 +2,11 @@ app.controller("LoginCtrl", function ($scope, $rootScope, $state, LoginManager, 
     var lgMng = new LoginManager();
     $scope.login = function () {
         //lgMng.logIn($scope.username, $scope.password).then(function(data) {
-        $state.go("base.monitoring.routeTracking.list", {
+        /*$state.go("base.monitoring.routeTracking.list", {
             routeID: null,
             informationTab: null
-        });
+        });*/
+        $state.go("base.freights");
         //});
     }
     $scope.logout = function () {

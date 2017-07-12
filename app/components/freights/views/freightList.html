@@ -1,1 +1,99 @@
-<h1>Hey</h1>
+<style media="screen">
+
+  .line {
+    border: none;
+    border-left: 20px solid #999;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px;
+    padding: 10px 5px 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.1s;
+  }
+
+  .line.red {
+    background: #fff0f0;
+    border-color: #A90329;
+  }
+
+  .line.green {
+    background: #f0fff0;
+    border-color: #7DC27D;
+  }
+
+  .line:hover {
+    margin-left: -2px;
+    margin-top: -2px;
+    box-shadow: 2px 2px 3px #999;
+    transition: all 0.1s;
+  }
+
+  .line .info h3{
+    border: none;
+  }
+
+  .details {
+      border: 1px solid #999;
+      height: 100%;
+      float: left;
+      width: 100%;
+      background: white;
+  }
+
+  .line.selected {
+      margin-left: 16px;
+      border-radius: 3px 0px 0px 3px;
+      box-shadow: none;
+      z-index: 999999;
+      border-style: solid;
+      border-width: 1px 0px 1px 20px;
+  }
+</style>
+<div class="col-md-6">
+  <div class="col-md-12 line selected">
+    <div class="col-md-6 info">
+      <h3>OYC-680</h3>
+      <h4>Transportista Monchis</h4>
+      <p>Olavarría > Local 33</p>
+    </div>
+    <div class="col-md-6 info2">
+      <p>Salida: Mañana 13:45hs</p>
+      <p>Llegada: Mañana 16:00hs</p>
+    </div>
+  </div>
+
+  <div class="col-md-12 line red">
+    <div class="col-md-6 info">
+      <h3>FPM-561</h3>
+      <h4>Transportista Cacota</h4>
+      <p>CD Munro > CD Olavarría</p>
+    </div>
+    <div class="col-md-6 info2">
+      <p>Salida: Hoy 15:45hs</p>
+      <p>Llegada: Hoy 18:30hs</p>
+    </div>
+  </div>
+
+  <div class="col-md-12 line green">
+    <div class="col-md-6 info">
+      <h3>FAP-666</h3>
+      <h4>Morvida S.A.</h4>
+      <p>CD CABA > Local 242</p>
+    </div>
+    <div class="col-md-6 info2">
+      <p>Salida: 17/06/2018 12:45hs</p>
+      <p>Llegada: 17/06/2018 13:30hs</p>
+    </div>
+  </div>
+</div>
+<div class="col-md-6" style="
+    padding: 0;
+    display: flex;
+    flex: 1;
+    height: 93%;
+">
+  <div class="details">
+
+  </div>
+</div>

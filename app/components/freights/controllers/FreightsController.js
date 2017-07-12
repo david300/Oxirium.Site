@@ -1,3 +1,7 @@
-app.controller("FreightsController", function ($scope, ActiveRoutes, GroupService, RouteService, CarrierService) {
-  
+app.controller("FreightsController", function ($scope) {
+  console.log('FreightsController');
+});
+
+app.controller("FreightListController", function($scope){
+  console.log('FreightListController');
 });

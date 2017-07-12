@@ -29,29 +29,31 @@ function config($qProvider, $stateProvider, $httpProvider, $urlRouterProvider, $
         })
 
         /* STATE FREIGHTS */
+
         .state('base.freights', {
-            abstract: true,
             url: "/Freights",
+            abstract: true,
             templateUrl: "app/components/freights/content.html",
             controller: "FreightsController",
-            resolve: {
+            /*resolve: {
                 ActiveRoutes: function (RouteTrackingService) {
                     return RouteTrackingService.GetActiveRoutes();
                 }
-            },
+            },*/
             loginRequired: true
         })
 
         .state('base.freights.list', {
+            url: "/List",
             views: {
                 'Freights': {
                     templateUrl: "app/components/freights/views/freightList.html",
                     controller: "FreightListController"
-                },
+                }/*,
                 'SideMenu': {
                     templateUrl: "app/components/monitoring/route-tracking/views/SideMenu.html",
                     controller: "RouteTrackingSideMenuController"
-                }
+                }*/
             },
             loginRequired: true
         })
