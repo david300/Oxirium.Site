@@ -58,6 +58,21 @@ function config($qProvider, $stateProvider, $httpProvider, $urlRouterProvider, $
             loginRequired: true
         })
 
+        .state('base.freights.list.details', {
+            url: "/List/:id",
+            views: {
+                'FreightDetails': {
+                    templateUrl: "app/components/freights/views/FreightDetails.html",
+                    controller: "FreightDetailsController"
+                }/*,
+                'SideMenu': {
+                    templateUrl: "app/components/monitoring/route-tracking/views/SideMenu.html",
+                    controller: "RouteTrackingSideMenuController"
+                }*/
+            },
+            loginRequired: true
+        })
+
         /* STATE MONITORING */
         .state('base.monitoring', {
             abstract: true,

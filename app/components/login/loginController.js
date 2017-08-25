@@ -6,7 +6,7 @@ app.controller("LoginCtrl", function ($scope, $rootScope, $state, LoginManager, 
             routeID: null,
             informationTab: null
         });*/
-        $state.go("base.freights");
+        $state.go("base.freights.list");
         //});
     }
     $scope.logout = function () {

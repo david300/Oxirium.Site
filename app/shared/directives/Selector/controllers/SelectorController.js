@@ -91,7 +91,7 @@ app.controller("SelectorController", function ($scope, $timeout, $uibModal) {
         }
     }
 
-    if ($scope.options.isMultiSelect) {
+    if ($scope.options != undefined && $scope.options.isMultiSelect) {
         Select.prototype = new MultiSelect();
     } else Select.prototype = new SingleSelect();
 
@@ -119,7 +119,7 @@ app.controller("SelectorController", function ($scope, $timeout, $uibModal) {
             for (property in item)
                 if (item.hasOwnProperty(property)) {
                     composedSelection += item[property] + " ";
-                }                
+                }
             return composedSelection
         } else return item[$scope.options.ShowProperty];
     }
